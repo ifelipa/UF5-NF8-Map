@@ -1,7 +1,10 @@
 package exercici8_8;
 
 import java.util.Map;
+import java.util.SortedMap;
 import java.util.TreeMap;
+
+import excercici8_9.Metodos;
 
 public class Main {
 
@@ -21,25 +24,31 @@ public class Main {
 
 		// Declarando el treemap
 		Map<String, Cotxe> mapList = new TreeMap<String, Cotxe>();
-
+		
 		// Agregandole al treeMap
 		for (int i = 0; i < key.length; i++) {
 			mapList.put(key[i], value[i]);
 		}
 
 		System.out.println("******Comprobando que lo haya agregado\n" + mapList.size());
-		System.out.println("\n Agregando un objecto duplicado");
-		mapList.put("1234AAA", alfa);
-		System.out.println("******Comprobando que lo haya agregado\n" + mapList.size());
-
+		
+		
+		if ((mapList.put("1234AAA", alfa)) != null){
+			System.out.println("no acepta duplicados");			
+		}else{
+			mapList.put("1234AAA", alfa);
+		}
+		
 		imprimir(mapList);
-
+		Metodos met = new Metodos();
+		//met.removeCar(2500,mapList);
+		System.out.println(mapList.size());
+		met.numberN(6, mapList);
 	}
 
 	private static void imprimir(Map<String, Cotxe> mapList) {
-
-		for (Map.Entry entry : mapList.entrySet()) {
-			System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
+		for (Map.Entry elemento : mapList.entrySet()) {
+			System.out.println("Key : " + elemento.getKey() + " Value : " + elemento.getValue());
 		}
 
 	}
