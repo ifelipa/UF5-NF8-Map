@@ -43,7 +43,8 @@ public class Main {
 		Metodos met = new Metodos();
 		//met.removeCar(2500,mapList);
 		System.out.println(mapList.size());
-		met.numberN(6, mapList);
+		//met.numberN(6, mapList);
+		met.barndCar("Hyundai", mapList);
 	}
 
 	private static void imprimir(Map<String, Cotxe> mapList) {
