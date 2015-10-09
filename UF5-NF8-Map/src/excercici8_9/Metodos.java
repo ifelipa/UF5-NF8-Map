@@ -12,7 +12,6 @@ public class Metodos {
 		ArrayList<String> borrar = new ArrayList<String>();
 		
 		for (Map.Entry elemento : mapList.entrySet()) {
-			// "Key : " + elemento.getKey() + " Value : " + elemento.getValue()
 			Cotxe aux = (Cotxe) elemento.getValue();
 			if (aux.getCilindrada() > cilin) {	
 				String key = (String) elemento.getKey();
