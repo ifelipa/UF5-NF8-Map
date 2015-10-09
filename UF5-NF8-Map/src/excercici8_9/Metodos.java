@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Map;
+import java.util.TreeMap;
 
 import exercici8_8.Cotxe;
 
@@ -50,11 +51,19 @@ public class Metodos {
 	 *  arrayList con los coches ordenados alfabeticamente
 	 */
 
-	public static ArrayList<Cotxe> brandCar(Map<String, Cotxe> mapList) {
-		ArrayList<Cotxe> returnList = new ArrayList<Cotxe>();
+	public static ArrayList<ArrayList<Cotxe>> brandCar(Map<String, Cotxe> mapList) {
+		//ArrayList<ArrayList<Cotxe>> returnList = new ArrayList<ArrayList<Cotxe>>(); 
+		Map<String, ArrayList<Cotxe>> returnList = new TreeMap<String, ArrayList<Cotxe>>();
+		
+		ArrayList<Cotxe> returnListBrand = new ArrayList<Cotxe>();
 
 		for (Map.Entry elemento : mapList.entrySet()) {
-			Cotxe aux = (Cotxe) elemento.getValue();			
+			Cotxe aux = (Cotxe) elemento.getValue();
+			String key = (String) elemento.getKey();
+			
+			if ()
+				
+				
 			returnList.add((Cotxe) elemento.getValue());
 		}
 
