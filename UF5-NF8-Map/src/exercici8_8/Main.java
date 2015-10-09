@@ -1,5 +1,6 @@
 package exercici8_8;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -40,11 +41,27 @@ public class Main {
 		}
 		
 		imprimir(mapList);
+		
+		
+		//EJERCICIOS 8.9
+		
 		Metodos met = new Metodos();
+		
 		//met.removeCar(2500,mapList);
 		System.out.println(mapList.size());
+		
 		//met.numberN(6, mapList);
-		met.barndCar("Hyundai", mapList);
+		
+				
+		
+		imprimirArrayList(met.brandCar(mapList));
+		
+	}
+
+	private static void imprimirArrayList(ArrayList<Cotxe> brandCar) {
+		for (Cotxe cotxe : brandCar) {
+			System.out.println(cotxe.toString());
+		}		
 	}
 
 	private static void imprimir(Map<String, Cotxe> mapList) {
@@ -53,5 +70,7 @@ public class Main {
 		}
 
 	}
+	
+	
 
 }
