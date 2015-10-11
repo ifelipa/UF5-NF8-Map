@@ -40,7 +40,7 @@ public class Main {
 			mapList.put("1234AAA", alfa);
 		}
 		
-		imprimir(mapList);
+		//imprimir(mapList);
 		
 		
 		//EJERCICIOS 8.9
@@ -54,16 +54,16 @@ public class Main {
 		
 				
 		
-		imprimirArrayList(met.brandCar(mapList));
+		printMapwhitArrayList(met.brandCar(mapList));
 		
 	}
 
-	private static void imprimirArrayList(ArrayList<Cotxe> brandCar) {
-		for (Cotxe cotxe : brandCar) {
-			System.out.println(cotxe.toString());
-		}		
+	private static void printMapwhitArrayList(Map<String, ArrayList<Cotxe>> brandCar) {
+		
+		for (Map.Entry element : brandCar.entrySet()){
+			System.out.println("Clave : "+ element.getKey() + "\n Value : "+ element.getValue().toString());
+		}
 	}
-
 	private static void imprimir(Map<String, Cotxe> mapList) {
 		for (Map.Entry elemento : mapList.entrySet()) {
 			System.out.println("Key : " + elemento.getKey() + " Value : " + elemento.getValue());

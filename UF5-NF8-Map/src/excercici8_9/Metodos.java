@@ -51,29 +51,45 @@ public class Metodos {
 	 *  arrayList con los coches ordenados alfabeticamente
 	 */
 
-	public static ArrayList<ArrayList<Cotxe>> brandCar(Map<String, Cotxe> mapList) {
+	public static Map<String, ArrayList<Cotxe>> brandCar(Map<String, Cotxe> mapList) {
 		//ArrayList<ArrayList<Cotxe>> returnList = new ArrayList<ArrayList<Cotxe>>(); 
-		Map<String, ArrayList<Cotxe>> returnList = new TreeMap<String, ArrayList<Cotxe>>();
+		Map<String, ArrayList<Cotxe>> returnListBrand = new TreeMap<String, ArrayList<Cotxe>>();
 		
-		ArrayList<Cotxe> returnListBrand = new ArrayList<Cotxe>();
+		ArrayList<Cotxe> returnAux = new ArrayList<Cotxe>();
 
 		for (Map.Entry elemento : mapList.entrySet()) {
 			Cotxe aux = (Cotxe) elemento.getValue();
-			String key = (String) elemento.getKey();
-			
-			if ()
-				
-				
-			returnList.add((Cotxe) elemento.getValue());
+			returnAux.add(aux);
 		}
 
-		Collections.sort(returnList, new Comparator<Cotxe>() {
-			@Override
-			public int compare(Cotxe o1, Cotxe o2) {
-				return o1.getMarca().compareTo(o2.getMarca());
+//		Collections.sort(returnAux, new Comparator<Cotxe>() {
+//			@Override
+//			public int compare(Cotxe o1, Cotxe o2) {
+//				return o1.getMarca().compareTo(o2.getMarca());
+//			}
+//		});
+		Collections.sort(returnAux);
+		System.out.println(returnAux);
+		boolean found=true;
+		ArrayList<Cotxe> coche = new ArrayList<Cotxe>();
+		String key="";
+		String keyAux="";
+		for (int i = 0; i < returnAux.size()-1; i++) {
+			key = returnAux.get(i).getMarca();
+			keyAux = returnAux.get(i+1).getMarca();
+			while (key.equals(keyAux)&& found) {				
+				Cotxe cocheAux =returnAux.get(i);
+				System.out.println(cocheAux);
+				//coche.add(cocheAux);
+				found=false;
 			}
-		});
-		return returnList;
+			
+			if (!found){
+				returnListBrand.put(key,coche );
+				found=true;
+			}
+		}
+		return returnListBrand;
 	}
 
 }
