@@ -61,7 +61,7 @@ public class Main {
 	private static void printMapwhitArrayList(Map<String, ArrayList<Cotxe>> brandCar) {
 		
 		for (Map.Entry element : brandCar.entrySet()){
-			System.out.println("Clave : "+ element.getKey() + "\n Value : "+ element.getValue().toString());
+			System.out.println("Clave : "+ element.getKey() + "\n Value : \n  "+ element.getValue().toString()+"\n");
 		}
 	}
 	private static void imprimir(Map<String, Cotxe> mapList) {
